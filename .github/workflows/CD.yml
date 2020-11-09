@@ -24,4 +24,4 @@ jobs:
 
     - name: Update image
       run: |
-        kubectl set image deployment/website website=${{ github.event.inputs.image }}!
+        kubectl set image deployment/website website=${{ github.event.inputs.image }}
