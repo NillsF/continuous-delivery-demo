@@ -17,4 +17,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "Hello ${{ github.event.inputs.image }}!"
+        kubectl set image deployment/website website=${{ github.event.inputs.image }}!
