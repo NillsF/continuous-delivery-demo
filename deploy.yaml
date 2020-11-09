@@ -16,7 +16,7 @@ spec:
         image: nfcddemo.azurecr.io/cd-demo/cd-demo:5
         resources:
           requests:
-            cpu: "10m"
+            cpu: "11m"
             memory: "10Mi"
           limits:
             memory: "128Mi"
