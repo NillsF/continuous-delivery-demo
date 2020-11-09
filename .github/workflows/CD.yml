@@ -13,7 +13,7 @@ on:
         default: 'nfcddemo.azurecr.io/cd-demo/cd-demo:latest'
 
 jobs:
-  say_hello:
+  update_app:
     runs-on: ubuntu-latest
     steps:
     - name: AZ CLI login
