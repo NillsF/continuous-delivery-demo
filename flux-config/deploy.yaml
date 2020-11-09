@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: website
-        image: nfcddemo.azurecr.io/cd-demo/cd-demo:16
+        image: nfcddemo.azurecr.io/cd-demo/cd-demo:10
         resources:
           limits:
             memory: "128Mi"
