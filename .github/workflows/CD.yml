@@ -16,5 +16,12 @@ jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
-    - run: |
+    - name: AZ CLI login
+      run: az login --service-principal --username ${{ secrets.APP_ID }} --password ${{ secrets.PASSWORD }} --tenant ${{ secrets.TENANT_ID }}
+        
+    - name: Get kubectl creds
+      run: az aks get-credentials -n cd-demo -g continuous-delivery-demo
+
+    - name: Update image
+      run: |
         kubectl set image deployment/website website=${{ github.event.inputs.image }}!
