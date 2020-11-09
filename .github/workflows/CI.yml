@@ -32,3 +32,9 @@ jobs:
         
       - name: Push container to registry
         run: docker push nfcddemo.azurecr.io/cd-demo/cd-demo:${{ github.run_number }}
+        
+      - name: Trigger CD
+        run: |
+          curl --user "nillsf:${{ secrets.TRIGGER_CD }}" \
+          -X POST https://api.github.com/repos/NillsF/continuous-delivery-demo/actions/workflows/3462678/dispatches \
+          -d '{"ref":"main","inputs":{"image":"nfcddemo.azurecr.io/cd-demo/cd-demo:${{ github.run_number }}"}}' 
