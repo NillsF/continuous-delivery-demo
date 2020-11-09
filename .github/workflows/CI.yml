@@ -22,7 +22,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build container
-        run: docker built -t nfcddemo.azurecr.io/cd-demo/cd-demo:${{ github.run_number }}
+        run: docker build -t nfcddemo.azurecr.io/cd-demo/cd-demo:${{ github.run_number }}
         
       - name: AZ CLI login
         run: az login --service-principal --username ${{ secrets.APP_ID }} --password ${{ secrets.PASSWORD }} --tenant ${{ secrets.TENANT_ID }}
