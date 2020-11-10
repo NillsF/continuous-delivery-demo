@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: website
+  name: website-v2
 spec:
   selector:
     matchLabels:
@@ -10,10 +10,11 @@ spec:
     metadata:
       labels:
         app: website
+        version: v2
     spec:
       containers:
       - name: website
-        image: nfcddemo.azurecr.io/cd-demo/cd-demo:5
+        image: nfcddemo.azurecr.io/cd-demo/cd-demo:6
         resources:
           requests:
             cpu: "11m"
